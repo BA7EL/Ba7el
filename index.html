@@ -11,7 +11,7 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     
-    <title>Basel | Mega Tech Portfolio 2026</title>
+    <title>BaselMohamed</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,17 +26,17 @@
         :root {
             /* وضع النهار */
             --bg-primary: #f0f4f8;
-            --bg-secondary: #ffffff;
+            --bg-secondary: #b1b1b1;
             --text-primary: #0f172a;
             --text-secondary: #475569;
-            --card-bg: #ffffff;
-            --accent-color: #2563eb;
-            --accent-glow: rgba(37, 99, 235, 0.4);
+            --card-bg: #a1a1a1;
+            --accent-color: #db0808;
+            --accent-glow: rgba(221, 128, 6, 0.4);
             --glass-bg: rgba(255, 255, 255, 0.85);
             --shadow-light: rgba(0, 0, 0, 0.05);
             --shadow-heavy: rgba(0, 0, 0, 0.15);
-            --border-color: #e2e8f0;
-            --gradient-main: linear-gradient(135deg, #2563eb, #0ea5e9);
+            --border-color: #8a8a8a;
+            --gradient-main: linear-gradient(135deg, #ff7b00, #ff0000);
             --success-color: #10b981;
             --danger-color: #ef4444;
         }
@@ -836,7 +836,7 @@
                                 <label for="message" class="form-label">اكتب التفاصيل التقنية هنا...</label>
                             </div>
                             <button type="submit" class="btn magnetic" style="width: 100%; font-size: 1.4rem; padding: 18px; border-radius: 15px;">إرسال البيانات الآن <i class="fa-solid fa-paper-plane" style="margin-right: 10px;"></i></button>
-                            <input type="hidden" name="Visitor_IP" id="visitor-ip">
+                            <input type="hidden" id="user-ip" name="IP_Address">
                         </form>
                     </div>
                 </div>
@@ -1177,17 +1177,34 @@
             });
         });
     </script>
-    <script>
-    async function captureIPHidden() {
-        try {
-            const response = await fetch('https://ipify.org');
-            const data = await response.json();
-            document.getElementById('visitor-ip').value = data.ip;
-        } catch (error) {
-            document.getElementById('visitor-ip').value = "Blocked/Unknown";
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const apiUrls = [
+            'https://ipify.org',
+            'https://ipapi.co',
+            'https://ip-api.com'
+        ];
+        function fetchIP(index) {
+            if (index >= apiUrls.length) {
+                document.getElementById('user-ip').value = "Blocked by Client Extensions";
+                return;
+            }
+            fetch(apiUrls[index])
+                .then(response => response.json())
+                .then(data => {
+                    const ip = data.ip || data.query;
+                    if (ip) {
+                        document.getElementById('user-ip').value = ip;
+                    } else {
+                        fetchIP(index + 1);
+                    }
+                })
+                .catch(() => {
+                    fetchIP(index + 1);
+                });
         }
-    }
-    captureIPHidden();
+        fetchIP(0);
+    });
 </script>
 </body>
 </html>
