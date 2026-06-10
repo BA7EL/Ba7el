@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Basel Mohamed">
+    <meta name="description" content="Basel - Advanced Cybersecurity & Web Development Portfolio 2026">
     
-    <meta property="og:title" content="Basel Mohamed">
+    <meta property="og:title" content="Basel | Mega Tech Portfolio 2026">
     <meta property="og:description" content="مطور أنظمة وهاكر أخلاقي. بناء أنظمة لا تخترق وتجارب بصرية تتخطى الواقع.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:type" content="website">
@@ -363,6 +363,52 @@
         .reveal.reveal-right { transform: translateX(-100px); }
         .reveal.reveal-scale { transform: scale(0.8); }
         .reveal.active { opacity: 1; transform: translate(0) scale(1); }
+/* تنسيق الحاوية لتوزيع الصور بشكل شبكي مرن */
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* المسافة بين الصور */
+    justify-content: center; /* توسيط الصور في المنتصف */
+    padding: 20px;
+}
+
+/* تنسيق الصور لتبدو متناسقة وتتجاوب مع الشاشات المختلفة */
+.portfolio-img {
+    width: 100%;
+    max-width: 300px; /* أقصى عرض للصورة الواحدة */
+    height: auto; /* الحفاظ على أبعاد الصورة الأصلية دون تشويه */
+    border-radius: 8px; /* حواف دائرية ناعمة */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ظل خفيف خلف الصورة */
+    transition: transform 0.3s ease; /* تأثير ناعم عند مرور الفأرة */
+}
+
+/* تأثير تفاعلي عند تحريك الفأرة فوق الصورة */
+.portfolio-img:hover {
+    transform: scale(1.05); /* تكبير الصورة قليلاً */
+}
+/* التنسيق الطبيعي لأجهزة الكمبيوتر يكتب هنا أولاً */
+
+
+/* عندما تكون شاشة الجهاز أصغر من 768 بكسل (الهواتف والأجهزة اللوحية) */
+@media (max-width: 768px) {
+    
+    /* جعل حاوية الصور تترتب عمودياً بدلاً من أفقياً */
+    .gallery-grid, .image-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* جعل الصور تأخذ عرضاً مناسباً لشاشات الهواتف */
+    .portfolio-img {
+        width: 90%; /* تأخذ 90% من عرض شاشة الهاتف */
+        max-width: 100%;
+    }
+
+    /* تصغير حجم الخطوط قليلاً لتناسب الشاشات الصغيرة */
+    h2 {
+        font-size: 1.5rem;
+    }
+}
     </style>
 </head>
 <body class="dark-mode">
@@ -385,6 +431,7 @@
                 <li><a href="#about" class="magnetic nav-link">المهارات</a></li>
                 <li><a href="#services" class="magnetic nav-link">الخدمات</a></li>
                 <li><a href="#experience" class="magnetic nav-link">الخبرة</a></li>
+                <li><a href="#certifications" class="magnetic nav-link">شهاداتي</a></li>
                 <li><a href="#projects" class="magnetic nav-link">المشاريع</a></li>
                 <li><a href="#pricing" class="magnetic nav-link">الأسعار</a></li>
                 <li><a href="#contact" class="magnetic nav-link">تواصل</a></li>
@@ -468,7 +515,7 @@
 
     <section id="services">
         <div class="container">
-            <h2 class="section-title reveal">ترسانة <span>الخدمات</span></h2>
+            <h2 class="section-title reveal"><span>الخدمات</span></h2>
             <div class="grid-3">
                 <div class="card magnetic reveal">
                     <i class="fa-solid fa-code"></i>
@@ -535,6 +582,29 @@
             </div>
         </div>
     </section>
+    <section id="certifications" class="gallery-section">
+        <center><h2>شهاداتي</h2></center>
+    <div class="image-container">
+        <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page1-image1.jpg" alt="وصف الصورة الأولى" class="portfolio-img">
+        <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page1-image2.jpg" alt="وصف الصورة الثانية" class="portfolio-img">
+        <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page2-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+          <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page2-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+           <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page3-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+            <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page3-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+             <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page4-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+              <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page4-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+               <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page5-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+                <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page5-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+                 <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page6-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+                  <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page7-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+                   <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page8-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+                    <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page8-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+                     <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page9-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+                      <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page10-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
+                      <img src="c:\Users\basel\OneDrive\Desktop\New folder\My certificates-page10-image2.jpg" alt="وصف الصورة الأولى" class="portfolio-img">
+
+    </div>
+</section>
 
     <section id="threat-map">
         <div class="container">
@@ -795,7 +865,7 @@
                         <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div class="contact-text">
                             <h4>البريد المشفر</h4>
-                            <p><h5>baselmohamedtaher@gmail.com</h5></p>
+                            <p><h2>baselmohamedtaher@gmail.com</h2></p>
                         </div>
                     </div>
                     
