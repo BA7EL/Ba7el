@@ -444,6 +444,36 @@
         font-size: 1.5rem;
     }
 }
+/* إصلاحات شاملة للتجاوب مع الهواتف الذكية */
+@media (max-width: 992px) {
+    * {
+        cursor: auto !important;
+    }
+    .cursor-dot, .cursor-glow {
+        display: none !important;
+    }
+    .glitch {
+        font-size: 3.5rem !important;
+        letter-spacing: 2px;
+    }
+    .section-title {
+        font-size: 2.2rem !important;
+        margin-bottom: 40px;
+    }
+    .typewriter {
+        font-size: 1.6rem !important;
+    }
+    .grid-2, .grid-3 {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+        gap: 25px !important;
+    }
+    .map-wrapper {
+        height: 320px !important;
+    }
+    section {
+        padding: 60px 5% !important; /* تقليل الحشو العلوي والسفلي للأقسام على الهاتف */
+    }
+}
     </style>
 </head>
 <body class="dark-mode">
