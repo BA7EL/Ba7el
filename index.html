@@ -20,6 +20,201 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+        #ai-floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #00e5ff, #7b2fff);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(123, 47, 255, 0.2);
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+  
+  /* الأسطر الجديدة للإخفاء والتحريك */
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s ease, box-shadow 0.3s ease;
+}
+
+/* حالة الظهور بعد ثانيتين */
+#ai-floating-btn.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* تأثير الـ Hover القديم نعدله ليعمل مع الحالة الجديدة */
+#ai-floating-btn.show:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.6), 0 0 60px rgba(123, 47, 255, 0.4);
+}
+        #ai-floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #00e5ff, #7b2fff);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(123, 47, 255, 0.2);
+  color: #fff;
+  font-family: sans-serif;
+  font-weight: 900;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+#ai-floating-btn:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.6), 0 0 60px rgba(123, 47, 255, 0.4);
+}
+
+#ai-chat-popup {
+  position: fixed;
+  bottom: 105px;
+  right: 30px;
+  width: 360px;
+  height: 480px;
+  background: #0b1530;
+  border: 1px solid #1a2f60;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  font-family: system-ui, -apple-system, sans-serif;
+  direction: rtl;
+}
+#ai-chat-popup.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.ai-popup-header {
+  background: rgba(0, 229, 255, 0.05);
+  padding: 12px 16px;
+  border-bottom: 1px solid #1a2f60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ai-popup-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #eef2ff;
+  font-size: 0.9rem;
+}
+.ai-popup-dot {
+  width: 8px;
+  height: 8px;
+  background: #28c840;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #28c840;
+}
+.ai-popup-close {
+  background: none;
+  border: none;
+  color: #6b7db3;
+  font-size: 1.6rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.ai-popup-close:hover { color: #00e5ff; }
+
+.ai-popup-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(3, 5, 15, 0.3);
+}
+
+.popup-msg {
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+.popup-msg.ai {
+  background: rgba(0, 229, 255, 0.08);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  color: #eef2ff;
+  align-self: flex-start;
+  border-radius: 4px 12px 12px 12px;
+}
+.popup-msg.user {
+  background: rgba(123, 47, 255, 0.2);
+  border: 1px solid rgba(123, 47, 255, 0.25);
+  color: #eef2ff;
+  align-self: flex-end;
+  border-radius: 12px 4px 12px 12px;
+}
+
+.ai-popup-footer {
+  padding: 12px;
+  border-top: 1px solid #1a2f60;
+  background: #060d1e;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+#popupInput {
+  flex: 1;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid #1a2f60;
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: #eef2ff;
+  font-size: 0.85rem;
+  outline: none;
+}
+#popupInput:focus { border-color: #00e5ff; }
+#popupSendBtn {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #00e5ff, #7b2fff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-typing { display: flex; gap: 4px; padding: 4px 6px; align-items: center; }
+.p-dot { width: 6px; height: 6px; background: #00e5ff; border-radius: 50%; animation: pBounce 1.4s infinite ease; }
+.p-dot:nth-child(2) { animation-delay: 0.2s; }
+.p-dot:nth-child(3) { animation-delay: 0.4s; }
+@keyframes pBounce { 0%,60%,100% { transform:translateY(0); } 30% { transform:translateY(-6px); } }
+
+@media(max-width: 400px) {
+  #ai-chat-popup { width: calc(100% - 40px); right: 20px; left: 20px; }
+}
         /* ==========================================================================
            1. المتغيرات العالمية (Global Variables) - نظام الـ Themes
            ========================================================================== */
@@ -441,7 +636,7 @@
 
     /* تصغير حجم الخطوط قليلاً لتناسب الشاشات الصغيرة */
     h2 {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 }
 /* إصلاحات شاملة للتجاوب مع الهواتف الذكية */
@@ -489,6 +684,30 @@
   </div>
 </div>
     </div>
+    <div id="ai-floating-btn" onclick="toggleAiChat()">AI</div>
+
+<div id="ai-chat-popup">
+  <div class="ai-popup-header">
+    <div class="ai-popup-status">
+      <span class="ai-popup-dot"></span>
+      <strong>مساعد BOS الذكي</strong>
+    </div>
+    <button class="ai-popup-close" onclick="toggleAiChat()">×</button>
+  </div>
+  
+  <div class="ai-popup-body" id="popupMsgs">
+    <div class="popup-msg ai">
+      أهلاً بك! أنا مساعدك الذكي BOS 🤖 كيف يمكنني مساعدتك اليوم؟
+    </div>
+  </div>
+  
+  <div class="ai-popup-footer">
+    <input type="text" id="popupInput" placeholder="اكتب سؤالك هنا..." onkeypress="handlePopupKey(event)" />
+    <button id="popupSendBtn" onclick="sendPopupMessage()">
+      <svg viewBox="0 0 24 24" width="18" height="18"><path d="M2 21l21-9L2 3v7l15 2-15 2z" fill="#fff"/></svg>
+    </button>
+  </div>
+</div>
 
     <header id="header">
         <div class="logo magnetic">BS<span></span></div>
@@ -1024,7 +1243,7 @@
                 <h4 style="margin: 30px 0 15px; font-size: 1.3rem; color: #fff;">الشبكات الرسمية</h4>
                 <div class="social-icons">
                     <a href="https://wa.me/201010928213" target="_blank" class="magnetic wa" title="WhatsApp المباشر" aria-label="التواصل عبر واتساب"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://www.facebook.com/share/1BLsdezo3h/" class="magnetic" title="صفحة Facebook" aria-label="صفحة فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/share/195jEwZJit/" class="magnetic" title="صفحة Facebook" aria-label="صفحة فيسبوك"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/_ba7el/#" class="magnetic" title="صفحة Instagram" aria-label="حساب انستجرام"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
@@ -1288,6 +1507,105 @@ window.addEventListener('DOMContentLoaded', () => {
                 if(!isActive) item.classList.add('active');
             });
         });
+        // 1. ضع مفتاح الـ API الخاص بك من منصة Groq هنا بين علامتي التنصيص
+const GROQ_API_KEY = "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"; 
+
+// فتح وإغلاق النافذة المنبثقة
+function toggleAiChat() {
+  const popup = document.getElementById('ai-chat-popup');
+  popup.classList.toggle('active');
+}
+
+// إضافة الرسائل داخل النافذة
+function appendPopupMsg(text, isUser) {
+  const body = document.getElementById('popupMsgs');
+  const msg = document.createElement('div');
+  msg.className = `popup-msg ${isUser ? 'user' : 'ai'}`;
+  msg.innerText = text;
+  body.appendChild(msg);
+  body.scrollTop = body.scrollHeight;
+}
+
+// إظهار مؤشر الانتظار
+function showPopupIndicator() {
+  const body = document.getElementById('popupMsgs');
+  const indicator = document.createElement('div');
+  indicator.id = 'popupIndicator';
+  indicator.className = 'popup-msg ai';
+  indicator.innerHTML = `
+    <div class="popup-typing">
+      <div class="p-dot"></div>
+      <div class="p-dot"></div>
+      <div class="p-dot"></div>
+    </div>
+  `;
+  body.appendChild(indicator);
+  body.scrollTop = body.scrollHeight;
+}
+
+function removePopupIndicator() {
+  const indicator = document.getElementById('popupIndicator');
+  if(indicator) indicator.remove();
+}
+
+// معالجة زر الإدخال Enter
+function handlePopupKey(e) {
+  if (e.key === 'Enter') sendPopupMessage();
+}
+
+// دالة إرسال الرسالة إلى الـ API الخاص بـ GROQ
+async function sendPopupMessage() {
+  const input = document.getElementById('popupInput');
+  const text = input.value.trim();
+  if (!text) return;
+
+  appendPopupMsg(text, true);
+  input.value = '';
+  showPopupIndicator();
+
+  try {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${GROQ_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "llama-3.1-8b-instant", 
+        messages: [
+          { role: "system", content: "أنت مساعد ذكي واسمك BOS، تجيب بذكاء وبطريقة عصرية ومختصرة وباللغة العربية." },
+          { role: "user", content: text }
+        ]
+      })
+    });
+
+    const data = await response.json();
+    removePopupIndicator();
+
+    if (data.choices && data.choices[0]) {
+      const reply = data.choices[0].message.content;
+      appendPopupMsg(reply, false);
+    } else if (data.error) {
+      appendPopupMsg(`خطأ من المنصة: ${data.error.message}`, false);
+    } else {
+      appendPopupMsg("عذراً، حدث خطأ غير متوقع في معالجة الرد.", false);
+    }
+
+  } catch (error) {
+    console.error(error);
+    removePopupIndicator();
+    appendPopupMsg("تعذر الاتصال بالذكاء الاصطناعي، يرجى التحقق من الاتصال والمفتاح.", false);
+  }
+}
+// إظهار الزر العائم تلقائياً بعد ثانيتين من فتح الموقع
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const floatingBtn = document.getElementById('ai-floating-btn');
+    if (floatingBtn) {
+      floatingBtn.classList.add('show');
+    }
+  }, 2500); // 2000 مللي ثانية تساوي ثانيتين
+});
     </script>
 </body>
 </html>
