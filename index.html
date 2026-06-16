@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+    <link rel="icon" type="image/png" sizes="48x48" href="https://baselmohamed.vercel.app/logo.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "url": "https://baselmohamed.vercel.app",
+  "logo": "https://baselmohamed.vercel.app/logo.jpg"
+}
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Basel - Advanced Cybersecurity & Web Development Portfolio 2026">
@@ -18,6 +28,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     
     <style>
         #ai-floating-btn {
@@ -669,7 +680,7 @@
         padding: 60px 5% !important; /* تقليل الحشو العلوي والسفلي للأقسام على الهاتف */
     }
 }
-<style>
+
     .typing-text {
         display: inline-block;
         white-space: normal; /* للسماح للنص بالنزول لسطر جديد على الهاتف بدلاً من الخروج عن الشاشة */
@@ -683,7 +694,6 @@
         }
     }
 </style>
-    </style>
 </head>
 <body class="dark-mode">
 
@@ -698,14 +708,14 @@
   </div>
 </div>
     </div>
-
+<div id="ai-response"></div>
 <div id="ai-chat-popup">
   <div class="ai-popup-header">
     <div class="ai-popup-status">
       <span class="ai-popup-dot"></span>
       <strong>مساعد Basel</strong>
     </div>
-    <button class="ai-popup-close" onclick="toggleAiChat()">×</button>
+    <button class="ai-popup-close" onclick="toggleAiChat()" aria-label=""></button>
   </div>
   
   <div class="ai-popup-body" id="popupMsgs">
@@ -756,7 +766,7 @@
             <div class="typewriter reveal active">
                  <span class="typing-text"></span>
             </div>
-            <p class="hero-desc reveal active">مرحباً بك  فيBSنحن لا نكتب اكواد فقط </p>
+            <p class="hero-desc reveal active">مرحباً بك  فيBSنحن لا نكتب اكواد فقط بل نصنع اليه دفاع متكامله حرك الماوس لاستشعار المغناطيس</p>
             <div class="reveal active" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                 <a href="#projects" class="btn magnetic">شاهد الأرشيف <i class="fa-solid fa-arrow-left"></i></a>
                 <a href="https://wa.me/201010928213" target="_blank" class="btn outline magnetic" aria-label="تواصل عبر الواتساب">تواصل عبر الواتساب <i class="fa-brands fa-whatsapp"></i></a>
@@ -1585,7 +1595,7 @@ function removePopupIndicator() {
 function handlePopupKey(e) {
   if (e.key === 'Enter') sendPopupMessage();
 }
-
+document.getElementById("response")
 // دالة إرسال الرسالة إلى الـ API الخاص بـ GROQ
 async function sendPopupMessage() {
   const input = document.getElementById('popupInput');
@@ -1630,7 +1640,6 @@ async function sendPopupMessage() {
     appendPopupMsg("تعذر الاتصال بالذكاء الاصطناعي، يرجى التحقق من الاتصال والمفتاح.", false);
   }
 }
-
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     const floatingBtn = document.getElementById('ai-floating-btn');
@@ -1639,7 +1648,28 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }, 2500); 
 });
+// دالة الكتابة الآلية (Typewriter Effect)
+function typeWriter(text, elementId, speed = 50) {
+    const element = document.getElementById(elementId);
+    if (!element) return; // لضمان عدم حدوث خطأ إذا كان الوسم غير موجود
+    
+    element.innerHTML = ""; // مسح أي نص قديم
+    let index = 0;
 
+    function write() {
+        if (index < text.length) {
+            element.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(write, speed); // التحكم في سرعة الكتابة (بالملي ثانية)
+        }
+    }
+    write();
+}
+
+// 💡 طريقة تشغيلها فور استقبال الرد من الذكاء الاصطناعي:
+// افترض أن النص القادم من السيرفر مخزن في متغير اسمه aiText
+// تشغل الدالة هكذا:
+// typeWriter(aiText, "ai-response");
     </script>
 </body>
 </html>
