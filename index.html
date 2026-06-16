@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Basel - Advanced Cybersecurity & Web Development Portfolio 2026">
     
-    <meta property="og:title" content="Basel | Mega Tech Portfolio 2026">
-    <meta property="og:description" content="مطور أنظمة وهاكر أخلاقي. بناء أنظمة لا تخترق وتجارب بصرية تتخطى الواقع.">
+    <meta property="og:title" content="Basel Mohamed">
+    <meta property="og:description" content="مطور ويب وامن سيبراني">
     <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -669,6 +669,20 @@
         padding: 60px 5% !important; /* تقليل الحشو العلوي والسفلي للأقسام على الهاتف */
     }
 }
+<style>
+    .typing-text {
+        display: inline-block;
+        white-space: normal; /* للسماح للنص بالنزول لسطر جديد على الهاتف بدلاً من الخروج عن الشاشة */
+        word-wrap: break-word;
+    }
+
+    /* ضبط حجم الخط تلقائياً على الهواتف */
+    @media (max-width: 768px) {
+        .typing-text {
+            font-size: 1.5rem !important; 
+        }
+    }
+</style>
     </style>
 </head>
 <body class="dark-mode">
@@ -684,19 +698,19 @@
   </div>
 </div>
     </div>
-    <div id="ai-floating-btn" onclick="toggleAiChat()">AI</div>
 
 <div id="ai-chat-popup">
   <div class="ai-popup-header">
     <div class="ai-popup-status">
       <span class="ai-popup-dot"></span>
-      <strong>مساعد BOS الذكي</strong>
+      <strong>مساعد Basel</strong>
     </div>
     <button class="ai-popup-close" onclick="toggleAiChat()">×</button>
   </div>
+  
   <div class="ai-popup-body" id="popupMsgs">
     <div class="popup-msg ai">
-      أهلاً بك! أنا مساعدك الذكي BOS 🤖 كيف يمكنني مساعدتك اليوم؟
+      أهلاً بك! اناBOSمساعد المطور باسل كيف اساعدك
     </div>
   </div>
   
@@ -716,7 +730,7 @@
                 <li><a href="#about" class="magnetic nav-link">المهارات</a></li>
                 <li><a href="#services" class="magnetic nav-link">الخدمات</a></li>
                 <li><a href="#experience" class="magnetic nav-link">الخبرة</a></li>
-                <li><a href="#certifications" class="magnetic nav-link">شهاداتي</a></li>
+                <li><a href="#certifications" class="magnetic nav-link">شهادات معتمدة</a></li>
                 <li><a href="#projects" class="magnetic nav-link">المشاريع</a></li>
                 <li><a href="#pricing" class="magnetic nav-link">الأسعار</a></li>
                 <li><a href="#contact" class="magnetic nav-link">تواصل</a></li>
@@ -737,13 +751,14 @@
         <div class="hero-content">
             <div class="glitch-wrapper reveal active">
                 <h1 class="glitch" data-text="BASEL">BASEL</h1>
+                <h2><span id="typewriter"></span><span class="cursor"></span></h2>
             </div>
             <div class="typewriter reveal active">
                  <span class="typing-text"></span>
             </div>
-            <p class="hero-desc reveal active">مرحباً بك في البعد الرقمي لعام 2026. نحن لا نكتب مجرد أكواد، بل نبني أنظمة لا تخترق وتجارب بصرية تتخطى الواقع. حرك الماوس لتستشعر القوة المغناطيسية.</p>
+            <p class="hero-desc reveal active">مرحباً بك  فيBSنحن لا نكتب اكواد فقط </p>
             <div class="reveal active" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="#projects" class="btn magnetic">شاهد الأرشيف الرقمي <i class="fa-solid fa-arrow-left"></i></a>
+                <a href="#projects" class="btn magnetic">شاهد الأرشيف <i class="fa-solid fa-arrow-left"></i></a>
                 <a href="https://wa.me/201010928213" target="_blank" class="btn outline magnetic" aria-label="تواصل عبر الواتساب">تواصل عبر الواتساب <i class="fa-brands fa-whatsapp"></i></a>
             </div>
         </div>
@@ -754,7 +769,7 @@
             <h2 class="section-title reveal">تحليل <span>القدرات</span></h2>
             <div class="grid-2">
                 <div class="card magnetic reveal reveal-right">
-                    <h3 style="color: var(--accent-color); font-size: 2.2rem;">مطور أنظمة وهاكر أخلاقي</h3>
+                    <h3 style="color: var(--accent-color); font-size: 2.2rem;">مطور ويب وامن سيبراني</h3>
                     <p style="font-size: 1.25rem; margin-bottom: 20px;">شغفي يكمن في نقطة التقاء التصميم العبقري والحماية المعقدة. إذا كان موقعك جميلاً ولكنه غير آمن، فهو مجرد هدف سهل. وإذا كان آمناً ولكنه بدائي، فلن يستخدمه أحد. أنا أوفر لك الاثنين معاً.</p>
                     <p style="font-size: 1.25rem;">أعتمد على معمارية برمجية متطورة تضمن سرعة البرق في الأداء، وحماية عسكرية للبيانات الحساسة.</p>
                     <div style="margin-top: 30px; display: flex; gap: 20px;">
@@ -764,13 +779,13 @@
                         </div>
                         <div style="padding: 15px 25px; background: var(--bg-primary); border: 1px solid var(--border-color); border-radius: 15px; text-align: center;">
                             <span style="display: block; font-size: 2rem; font-weight: bold; color: var(--accent-color);">AWS</span>
-                            <span style="font-size: 0.9rem;">خبير سحابي</span>
+                            <span style="font-size: 0.9rem;">خبير</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="card magnetic reveal reveal-left">
-                    <h3 style="font-size: 2rem; margin-bottom: 30px;">مؤشر المهارات التقنية</h3>
+                    <h3 style="font-size: 2rem; margin-bottom: 30px;">المهارات التقنية</h3>
                     <div class="skills-wrapper">
                         <div class="skill-box">
                             <div class="skill-name"><span>Web 3D & Advanced UI (React/Three.js)</span> <span>98%</span></div>
@@ -838,7 +853,7 @@
 
     <section id="experience">
         <div class="container">
-            <h2 class="section-title reveal">أرشيف <span>العمليات</span></h2>
+            <h2 class="section-title reveal"><span>العمليات</span></h2>
             <div class="timeline">
                 <div class="timeline-item reveal">
                     <div class="timeline-dot"></div>
@@ -868,25 +883,25 @@
         </div>
     </section>
     <section id="certifications" class="gallery-section">
-        <center><h2>شهاداتي</h2></center>
+        <center><h2>شهادات معتمدة</h2></center>
     <div class="image-container">
-        <img src="My certificates-page1-image1 copy.jpg" alt="وصف الصورة الأولى" class="portfolio-img">
-        <img src="My certificates-page1-image1.jpg" alt="وصف الصورة الثانية" class="portfolio-img">
-        <img src="My certificates-page1-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-          <img src="My certificates-page2-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-           <img src="My certificates-page2-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-            <img src="My certificates-page3-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-             <img src="My certificates-page3-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-              <img src="My certificates-page4-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-               <img src="My certificates-page4-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-                <img src="My certificates-page5-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-                 <img src="My certificates-page5-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-                  <img src="My certificates-page6-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-                   <img src="My certificates-page8-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-                    <img src="My certificates-page8-image2.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-                     <img src="My certificates-page9-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-                      <img src="My certificates-page10-image1.jpg" alt="وصف الصورة الثالثة" class="portfolio-img">
-                      <img src="My certificates-page10-image2.jpg" alt="وصف الصورة الأولى" class="portfolio-img">
+        <img src="My certificates-page1-image1 copy.jpg" alt="" class="portfolio-img">
+        <img src="My certificates-page1-image1.jpg" alt="" class="portfolio-img">
+        <img src="My certificates-page1-image2.jpg" alt="" class="portfolio-img">
+          <img src="My certificates-page2-image1.jpg" alt="" class="portfolio-img">
+           <img src="My certificates-page2-image2.jpg" alt="" class="portfolio-img">
+            <img src="My certificates-page3-image1.jpg" alt="" class="portfolio-img">
+             <img src="My certificates-page3-image2.jpg" alt="" class="portfolio-img">
+              <img src="My certificates-page4-image1.jpg" alt="" class="portfolio-img">
+               <img src="My certificates-page4-image2.jpg" alt="" class="portfolio-img">
+                <img src="My certificates-page5-image1.jpg" alt="" class="portfolio-img">
+                 <img src="My certificates-page5-image2.jpg" alt="" class="portfolio-img">
+                  <img src="My certificates-page6-image1.jpg" alt="" class="portfolio-img">
+                   <img src="My certificates-page8-image1.jpg" alt="" class="portfolio-img">
+                    <img src="My certificates-page8-image2.jpg" alt="" class="portfolio-img">
+                     <img src="My certificates-page9-image1.jpg" alt="" class="portfolio-img">
+                      <img src="My certificates-page10-image1.jpg" alt="" class="portfolio-img">
+                      <img src="My certificates-page10-image2.jpg" alt="" class="portfolio-img">
 
     </div>
 </section>
@@ -894,7 +909,7 @@
     <section id="threat-map">
         <div class="container">
             <h2 class="section-title reveal">رادار <span>الهجمات</span> العالمية</h2>
-            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 50px; color: var(--text-secondary);" class="reveal">نظامنا يتصدى للتهديدات في الوقت الفعلي من كافة أنحاء العالم (محاكاة).</p>
+            <p style="text-align: center; font-size: 1.3rem; margin-bottom: 50px; color: var(--text-secondary);" class="reveal">نظامBSيتصدي لهجمات عالميه الان</p>
             <div class="map-wrapper reveal reveal-scale magnetic">
                 <div class="pulse-dot" style="top: 25%; left: 20%;"></div>
                 <div class="pulse-dot" style="top: 45%; left: 75%; animation-delay: 0.5s;"></div>
@@ -903,16 +918,29 @@
                 <div class="pulse-dot" style="top: 80%; left: 30%; animation-delay: 0.8s;"></div>
                 <div class="pulse-dot" style="top: 15%; left: 60%; animation-delay: 1.2s;"></div>
                 
-                <svg class="attack-line"><path d="M 20% 25% Q 40% 10% 50% 35%"/></svg>
-                <svg class="attack-line" style="animation-delay: 1s;"><path d="M 75% 45% Q 60% 60% 50% 35%"/></svg>
-                <svg class="attack-line" style="animation-delay: 2s;"><path d="M 30% 80% Q 40% 60% 85% 65%"/></svg>
+              <div class="pulse-dot" style="top: 25%; left: 20%;"></div>
+                <div class="pulse-dot" style="top: 45%; left: 75%; animation-delay: 0.5s;"></div>
+                <div class="pulse-dot" style="top: 35%; left: 50%; animation-delay: 1s;"></div>
+                <div class="pulse-dot" style="top: 65%; left: 85%; animation-delay: 1.5s;"></div>
+                <div class="pulse-dot" style="top: 80%; left: 30%; animation-delay: 0.8s;"></div>
+                <div class="pulse-dot" style="top: 15%; left: 60%; animation-delay: 1.2s;"></div>
+                
+                <svg class="attack-line" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 20 25 Q 40 10 50 35"/></svg>
+                <svg class="attack-line" style="animation-delay: 1s;" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 75 45 Q 60 60 50 35"/></svg>
+                <svg class="attack-line" style="animation-delay: 2s;" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M 30 80 Q 40 60 85 65"/></svg>
             </div>
         </div>
     </section>
 
     <section id="projects">
         <div class="container">
-            <h2 class="section-title reveal">أرشيف <span>المشاريع</span></h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title reveal"><span>المشاريع</span></h2>
             
             <div class="filter-container reveal">
                 <button class="filter-btn active magnetic" data-filter="all">الكل</button>
@@ -1009,22 +1037,22 @@
             <div class="grid-4">
                 <div class="stat-box magnetic reveal">
                     <i class="fa-solid fa-diagram-project"></i>
-                    <div><span class="stat-number" data-target="357">0</span><span class="stat-number">+</span></div>
+                    <div><span class="stat-number" data-target="357">357</span><span class="stat-number">+</span></div>
                     <div class="stat-text">نظام ومشروع منجز</div>
                 </div>
                 <div class="stat-box magnetic reveal" style="transition-delay: 0.1s;">
                     <i class="fa-solid fa-bug-slash"></i>
-                    <div><span class="stat-number" data-target="680">0</span><span class="stat-number">+</span></div>
+                    <div><span class="stat-number" data-target="680">680</span><span class="stat-number">+</span></div>
                     <div class="stat-text">ثغرة أمنية تم إغلاقها</div>
                 </div>
                 <div class="stat-box magnetic reveal" style="transition-delay: 0.2s;">
                     <i class="fa-solid fa-shield-check"></i>
-                    <div><span class="stat-number" data-target="98">0</span><span class="stat-number">%</span></div>
+                    <div><span class="stat-number" data-target="98">98</span><span class="stat-number">%</span></div>
                     <div class="stat-text">نسبة حماية البيانات</div>
                 </div>
                 <div class="stat-box magnetic reveal" style="transition-delay: 0.3s;">
                     <i class="fa-solid fa-clock-rotate-left"></i>
-                    <div><span class="stat-number" data-target="5">0</span></div>
+                    <div><span class="stat-number" data-target="5">5</span></div>
                     <div class="stat-text">سنوات من الخبرة العملية</div>
                 </div>
             </div>
@@ -1135,13 +1163,13 @@
             <h2 class="section-title reveal">تأسيس <span>اتصال آمن</span></h2>
             <div class="contact-container reveal">
                 <div class="contact-info">
-                    <h3 style="font-size: 2.2rem; margin-bottom: 20px; color: var(--accent-color);">قنوات الاتصال المباشر</h3>
+                    <h3 style="font-size: 2.2rem; margin-bottom: 20px; color: var(--accent-color);"> الاتصال المباشر</h3>
                     <p style="margin-bottom: 40px; font-size: 1.25rem; color: var(--text-secondary);">سواء كنت تحتاج لتأمين بنيتك التحتية من تهديد وشيك، أو ترغب في هندسة نظام برمجي من المستقبل، نحن جاهزون للاستجابة الفورية.</p>
                     
                     <div class="contact-info-item magnetic">
                         <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
                         <div class="contact-text">
-                            <h4>اتصال سريع (واتساب)</h4>
+                            <h4>اتصال واتساب</h4>
                             <p style="letter-spacing: 2px;">01010928213</p>
                         </div>
                     </div>
@@ -1149,7 +1177,7 @@
                     <div class="contact-info-item magnetic">
                         <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div class="contact-text">
-                            <h4>البريد المشفر</h4>
+                            <h4>البريد الإلكتروني</h4>
                             <p><h2>baselmohamedtaher@gmail.com</h2></p>
                         </div>
                     </div>
@@ -1165,7 +1193,7 @@
                 
                 <div class="contact-form-wrapper">
                     <div class="card magnetic" style="padding: 50px 40px;">
-                        <h3 style="font-size: 2rem; margin-bottom: 30px;">أرسل رسالة مشفرة إلينا</h3>
+                        <h3 style="font-size: 2rem; margin-bottom: 30px;">أرسل رسالة لنا</h3>
                         <form id="contactForm" action="https://formspree.io/f/mredzvva" method="POST">
                             <div class="form-group magnetic">
                                 <input type="text" id="name" name="name" class="form-control" required>
@@ -1173,7 +1201,7 @@
                             </div>
                             <div class="form-group magnetic">
                                 <input type="email" id="email" name="email" class="form-control" required>
-                                <label for="email" class="form-label">بريد إلكتروني آمن</label>
+                                <label for="email" class="form-label">البريد الإلكتروني</label>
                             </div>
                             <div class="form-group magnetic">
                                 <select id="service" name="service" class="form-control" style="cursor: pointer; appearance: none;" required>
@@ -1188,7 +1216,7 @@
                             </div>
                             <div class="form-group magnetic">
                                 <textarea id="message" name="message" class="form-control" required></textarea>
-                                <label for="message" class="form-label">اكتب التفاصيل التقنية هنا...</label>
+                                <label for="message" class="form-label">اكتب التفاصيل هنا</label>
                             </div>
                             <button type="submit" class="btn magnetic" style="width: 100%; font-size: 1.4rem; padding: 18px; border-radius: 15px;">إرسال البيانات الآن <i class="fa-solid fa-paper-plane" style="margin-right: 10px;"></i></button>
                             <input type="hidden" id="user-ip" name="IP_Address">
@@ -1236,7 +1264,7 @@
                 <p style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 15px;">اشترك في نشرتنا الأمنية للحصول على أحدث تنبيهات الثغرات عالمياً.</p>
                     <form id="contactForm" action="https://formspree.io/f/mredzvva" method="POST">
                             <div class="form-group magnetic">
-                    <input type="email" placeholder="أدخل بريدك الآمن" required>
+                    <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
                     <button type="submit">اشتراك</button>
                 </form>
                 <h4 style="margin: 30px 0 15px; font-size: 1.3rem; color: #fff;">الشبكات الرسمية</h4>
@@ -1394,12 +1422,15 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // --- 6. تأثير الكتابة الآلية (Typewriter Effect) ---
+      // --- 6. تأثير الكتابة الآلية (Typewriter Effect) ---
         const typingElement = document.querySelector('.typing-text');
-        const words = ["خبير أمن سيبراني.", "مطور أنظمة معقدة.", "صائد ثغرات محترف.", "مهندس برمجيات 2026."];
+        // هنا تم تغيير الكلمات وإضافة العبارات الجديدة التي طلبتها
+        const words = ["مطور أنظمة لا تخترق.", "مطور ويب محترف.", "مهندس أمن سيبراني."];
         let wordIndex = 0; let charIndex = 0; let isDeleting = false;
 
         function initTypewriter() {
+            if(!typingElement) return; // حماية للكود في حال لم يجد العنصر في الصفحة
+            
             const currentWord = words[wordIndex];
             if(isDeleting) {
                 typingElement.textContent = currentWord.substring(0, charIndex - 1);
@@ -1420,6 +1451,9 @@ window.addEventListener('DOMContentLoaded', () => {
             }
             setTimeout(initTypewriter, typeSpeed);
         }
+
+        // السطر القادم هو السحر الذي كان ينقص كودك القديم ليشتغل تلقائياً:
+        document.addEventListener("DOMContentLoaded", initTypewriter);
 
         // --- 7. أنيميشن الظهور (Scroll Reveal) وتفعيل الإحصائيات ---
         const reveals = document.querySelectorAll('.reveal');
@@ -1596,15 +1630,16 @@ async function sendPopupMessage() {
     appendPopupMsg("تعذر الاتصال بالذكاء الاصطناعي، يرجى التحقق من الاتصال والمفتاح.", false);
   }
 }
-// إظهار الزر العائم تلقائياً بعد ثانيتين من فتح الموقع
+
 window.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     const floatingBtn = document.getElementById('ai-floating-btn');
     if (floatingBtn) {
       floatingBtn.classList.add('show');
     }
-  }, 2500); // 2000 مللي ثانية تساوي ثانيتين
+  }, 2500); 
 });
+
     </script>
 </body>
 </html>
