@@ -1,15 +1,9 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <link rel="icon" type="image/png" sizes="48x48" href="https://baselmohamed.vercel.app/logo.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="logo.jpg">
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "url": "https://baselmohamed.vercel.app",
-  "logo": "https://baselmohamed.vercel.app/logo.jpg"
-}
 </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1648,28 +1642,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }, 2500); 
 });
-// دالة الكتابة الآلية (Typewriter Effect)
-function typeWriter(text, elementId, speed = 50) {
-    const element = document.getElementById(elementId);
-    if (!element) return; // لضمان عدم حدوث خطأ إذا كان الوسم غير موجود
-    
-    element.innerHTML = ""; // مسح أي نص قديم
-    let index = 0;
-
-    function write() {
-        if (index < text.length) {
-            element.innerHTML += text.charAt(index);
-            index++;
-            setTimeout(write, speed); // التحكم في سرعة الكتابة (بالملي ثانية)
-        }
-    }
-    write();
-}
-
-// 💡 طريقة تشغيلها فور استقبال الرد من الذكاء الاصطناعي:
-// افترض أن النص القادم من السيرفر مخزن في متغير اسمه aiText
-// تشغل الدالة هكذا:
-// typeWriter(aiText, "ai-response");
     </script>
 </body>
 </html>
